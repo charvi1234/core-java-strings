@@ -1,0 +1,42 @@
+public class practiseset1_3{
+public static void main(String args[]){
+String s="University Coding Academy";
+String m="ing Aca";
+int len1,i,j=0,flag=1,count=0;
+int len2;
+len1=s.length();
+len2=m.length();
+char temp1[]=s.toCharArray();
+char temp2[]=m.toCharArray();
+for(i=0;i<len1;i++)
+{
+count=0;
+  if(temp1[i]==temp2[j])
+        {
+        int pos=i;
+        while((count<len2)&&(temp1[i]==temp2[j]))
+        {
+        count++;
+        i++;
+        j++;
+        }
+        if(count==len2)
+        {
+        flag=0;
+        i=len1;
+        }
+        else
+        {
+        j=0;
+        i=pos;
+        }
+        }
+
+}
+if(flag==1)
+System.out.println("no");
+else
+System.out.println("yes");
+
+}
+}
