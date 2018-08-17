@@ -1,0 +1,39 @@
+public class Solution {
+    public String addBinary(String A, String B) {
+        int a=0,b=0,k=0;
+        int i,j;
+        int len1=A.length();
+        int len2=B.length();
+        i=len1-1;
+        j=len2-1;
+        String d=new String();
+        String c=new String();     
+        int sum=0,carry=0;
+        while(i>=0||j>=0||carry>0)
+        {
+            a=0;
+            b=0;
+            sum=0;
+            if(i>=0)
+            {
+                a=Character.getNumericValue(A.charAt(i));
+            }
+            if(j>=0)
+            {
+                b=Character.getNumericValue(B.charAt(j));
+            }
+         sum=(a+b+carry)%2;
+         carry=(a+b+carry)/2;
+         i--;
+         j--;
+         d=d+sum;
+        }
+       int p=d.length();
+       char temp[]=d.toCharArray();
+       for(i=p-1;i>=0;i--)
+       {
+         c=c+temp[i];  
+       }
+       return c;
+    }
+}
