@@ -1,1 +1,1 @@
-This repository contains codes of implementation concepts of core java. 
+This repository contains codes of implementation of concepts of core java. 
