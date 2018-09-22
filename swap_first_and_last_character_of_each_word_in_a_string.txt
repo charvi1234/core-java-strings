@@ -1,0 +1,37 @@
+/*
+Sample Input 
+Code Quotient
+
+Sample Output
+eodC tuotienQ
+*/
+
+static String swapFirstLastChar(String str)
+{
+  int i,j;
+  char temp[] = str.toCharArray();
+  int len = temp.length;
+  char temp1;
+  for(i = 0; i < len; i++)
+  {
+    for(j = i+1; j < len; j++)
+    {
+      while(j!=len-1&&temp[j]!=' ')
+        j++;
+      int pos = j;
+      if(j!=len-1)
+        j=j-1;
+      temp1 = temp[i];
+      temp[i]=temp[j];
+      temp[j]=temp1;
+      i=pos;
+      break;     
+    }
+  }
+  String d=new String();
+  for(i = 0; i < len; i++)
+    {
+      d=d+temp[i];
+    }
+  return d;
+} 
