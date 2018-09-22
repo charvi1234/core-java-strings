@@ -1,0 +1,52 @@
+/*
+Sample Input
+MOM AND DAD ARE MY BEST FRIENDS
+
+Sample Output
+2
+*/
+
+static int countPalindrome(String str)
+{
+  int i,j,pos=0,count=0;
+  str=str.toLowerCase();
+  char temp[] = str.toCharArray();
+  int len = temp.length;
+  //System.out.println("is" + len);
+  for(i = 0; i < len; i++)
+  {
+    if(temp[i]==' ')
+      i++;
+    for(j = i+1; j < len; j++)
+    {
+      while(j<len-1&&temp[j]!=' ')
+        j++;
+      //System.out.println(j);      
+      pos=j;
+      if(j!=len-1)
+      j=j-1;
+      if(temp[i]==temp[j])
+      {
+        while(i<j&&temp[i]==temp[j])
+        {
+			i++;
+          	j--;
+        }
+        if(i==j||i>j)
+        {
+          i=pos;
+          count++;
+          break;
+        }
+        i=pos;
+        break;
+      }
+      else
+      {
+      i=pos;
+      break;
+      }
+    }
+  }
+  return count;
+}
