@@ -1,0 +1,33 @@
+/*
+Sample Input
+get better at coding
+
+Sample Output
+Get Better At Coding
+*/
+static String capitalizeFirstChar(String str)
+{
+  int i;
+  char temp[] = str.toCharArray();
+  int len = temp.length;
+  for(i = 0; i < len; i++)
+  {
+    if(i==0||temp[i]==32)
+    {
+      if(i==0)
+        temp[i]=Character.toUpperCase(temp[i]);
+      else if(temp[i]==32)
+      {
+        i=i+1;
+        temp[i]=Character.toUpperCase(temp[i]);
+      }
+    }
+  }
+  String d=new String();
+  for(i = 0; i < len; i++)
+    {
+      d=d+temp[i];
+    }
+  return d;
+}
+
