@@ -5,6 +5,7 @@ get better at coding
 Sample Output
 Get Better At Coding
 */
+
 static String capitalizeFirstChar(String str)
 {
   int i;
